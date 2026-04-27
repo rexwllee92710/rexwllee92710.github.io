@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lee Wai Lung (Rex) | System Analyst Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&display=swap');
+        
+        :root {
+            --resume-blue: #00aeef;
+            --resume-dark: #333333;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .resume-pattern {
+            background-color: #ffffff;
+            background-image: radial-gradient(circle at 2px 2px, #e5e7eb 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: radial-gradient(circle at 100% 0%, rgba(0, 174, 239, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .btn-resume {
+            background-color: var(--resume-blue);
+            transition: all 0.3s ease;
+        }
+
+        .btn-resume:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            color: var(--resume-blue);
+            border-left: 4px solid var(--resume-blue);
+            padding-left: 1rem;
+        }
+
+        [data-i18n] {
+            transition: opacity 0.2s ease;
+        }
+    </style>
+</head>
+<body class="resume-pattern text-gray-800">
+
+    <!-- 導覽列 -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tighter text-gray-900">
+                LEE WAI LUNG <span class="text-[#00aeef]">REX</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="space-x-8 hidden md:flex items-center mr-4">
+                    <a href="#home" class="text-sm font-bold hover:text-[#00aeef] transition" data-i18n="nav-about">關於</a>
+                    <a href="#apps" class="text-sm font-bold hover:text-[#00aeef] transition" data-i18n="nav-portfolio">作品集</a>
+                    <a href="#contact" class="text-sm font-bold text-[#00aeef] hover:underline transition" data-i18n="nav-contact">聯繫</a>
+                </div>
+                <!-- 語言切換按鈕 -->
+                <button id="lang-switch" class="flex items-center gap-2 px-3 py-1 border border-gray-200 rounded-full text-xs font-bold hover:border-[#00aeef] hover:text-[#00aeef] transition">
+                    <i class="fas fa-globe"></i>
+                    <span id="lang-text">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄區 (Hero Section) -->
+    <section id="home" class="relative pt-48 pb-32 px-6 overflow-hidden">
+        <div class="hero-bg"></div>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-[#00aeef] font-bold tracking-widest mb-4 uppercase" data-i18n="hero-title">System Analyst</h2>
+                <h1 class="text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
+                    Lee Wai Lung<br><span class="text-gray-400">Rex</span>
+                </h1>
+                <p class="text-gray-600 text-lg leading-relaxed mb-10 max-w-xl" data-i18n="hero-desc">
+                    擁有超過 9 年經驗的資深系統分析師，專精於網上銀行、流動銀行及電子結單系統開發。曾服務於 Fubon Bank 及 HKT (Tap & Go)，擅長將複雜的業務需求轉化為高效的 FinTech 技術方案。
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#apps" class="btn-resume text-white px-8 py-3 rounded-md font-bold shadow-lg shadow-cyan-100" data-i18n="btn-view">查看作品集</a>
+                    <a href="mailto:rex.wl.lee.92710@gmail.com" class="bg-gray-900 text-white px-8 py-3 rounded-md font-bold hover:bg-gray-800 transition" data-i18n="btn-contact">聯絡我</a>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <div class="relative w-72 h-72 mx-auto">
+                    <div class="absolute inset-0 border-8 border-[#00aeef] rounded-full opacity-20 animate-pulse"></div>
+                    <div class="absolute inset-4 border-4 border-gray-200 rounded-full"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fas fa-briefcase text-6xl text-[#00aeef]"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App 列表區 -->
+    <section id="apps" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="mb-16">
+            <h2 class="section-title text-2xl font-bold uppercase tracking-widest" data-i18n="section-apps">Featured Apps</h2>
+        </div>
+
+        <div id="app-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- App 卡片由 JavaScript 動態生成 -->
+        </div>
+    </section>
+
+    <!-- 聯繫我 -->
+    <section id="contact" class="py-32 bg-gray-900 text-white px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8 text-[#00aeef]" data-i18n="section-contact">GET IN TOUCH</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-[#00aeef] rounded-full flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/20">
+                        <i class="fas fa-envelope text-2xl text-white"></i>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-1 uppercase font-bold tracking-widest" data-i18n="contact-email">Email</p>
+                    <a href="mailto:rex.wl.lee.92710@gmail.com" class="text-xl font-medium hover:text-[#00aeef] transition">rex.wl.lee.92710@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="py-12 text-center text-gray-500 bg-white border-t border-gray-100">
+        <p class="text-xs font-bold uppercase tracking-widest">© 2024 Lee Wai Lung, Rex | System Analyst Portfolio</p>
+    </footer>
+
+    <script>
+        // 翻譯資源
+        const translations = {
+            'zh': {
+                'nav-about': '關於',
+                'nav-portfolio': '作品集',
+                'nav-contact': '聯繫我',
+                'hero-title': '系統分析師 (System Analyst)',
+                'hero-desc': '擁有超過 9 年經驗的資深系統分析師，專精於網上銀行、流動銀行及電子結單系統開發。曾服務於 Fubon Bank 及 HKT (Tap & Go)，擅長將複雜的業務需求轉化為高效的 FinTech 技術方案。',
+                'btn-view': '查看作品集',
+                'btn-contact': '聯絡我',
+                'section-apps': '精選 App 作品',
+                'section-contact': '聯絡方式',
+                'contact-email': '電子郵件',
+                'contact-phone': '電話',
+                'apps': [
+                    {
+                        name: "萬用抽獎工具：隨機抽籤、自訂名單、批量輸入",
+                        description: "無論是派對抽獎、活動派對、還是日常決定，這款抽獎 App 是您的最佳助手。界面簡潔清爽，功能強大且直觀，讓抽獎變得從容簡單。",
+                        tags: ["工具", "Android", "Java"]
+                    },
+                    {
+                        name: "網紅影片留言抽獎器(KOL Giveaway Master)",
+                        description: "專為 YouTube 創作者設計，利用 YouTube API 自動化抓取數據。體現了 SA 對於第三方 API 整合與數據流動的規劃能力。",
+                        tags: ["工具", "Android", "Dart", "Flutter"]
+                    },
+                    {
+                        name: "Tic Tac Toe - 井字過三關 - 智鬥AI",
+                        description: "這是一款專為行動裝置優化的現代化井字過三關遊戲。除了保留最純粹的經典對戰，更加入創新、高強度的「流動模式（Infinite Mode）」與智能 AI，讓簡單的遊戲也充滿策略深度。",
+                        tags: ["遊戲", "Android"]
+                    }
+                ]
+            },
+            'en': {
+                'nav-about': 'ABOUT',
+                'nav-portfolio': 'PORTFOLIO',
+                'nav-contact': 'CONTACT',
+                'hero-title': 'System Analyst',
+                'hero-desc': 'Seasoned System Analyst with over 9 years of experience specializing in Internet Banking, Mobile Banking, and E-Statement systems. Proven track record at Fubon Bank and HKT (Tap & Go) in translating complex business needs into high-performance FinTech solutions.',
+                'btn-view': 'View Portfolio',
+                'btn-contact': 'Contact Me',
+                'section-apps': 'Featured Apps',
+                'section-contact': 'Get In Touch',
+                'contact-email': 'Email',
+                'contact-phone': 'Phone',
+                'apps': [
+                    {
+                        name: "Lucky Draw Master:Custom Lists",
+                        description: "Whether it's for party giveaways, event lucky draws, or just making daily decisions, this app is your ultimate companion. Featuring a clean and intuitive interface, it makes random picking effortless and organized.",
+                        tags: ["Tools", "Android", "Java"]
+                    },
+                    {
+                        name: "Comment Catcher-KOL Giveaway",
+                        description: "Designed for content creators using YouTube API for automated data retrieval. Highlights expertise in API integration and data flow.",
+                        tags: ["Tools","Android","Dart", "Flutter"]
+                    },
+                    {
+                        name: "Tic Tac Toe-Battle with AI",
+                        description: "This is a modern, high-performance Tic Tac Toe game designed specifically for mobile devices. Beyond the pure 'Classic' experience, it features an innovative, high-intensity 'Infinite Mode' and a strategic AI that turns a simple game into a deep battle of wits.",
+                        tags: ["Game", "Android"]
+                    }
+                ]
+            }
+        };
+
+        const appData = [
+            {
+                id: 0,
+                image: "https://rexwllee92710.github.io/app1.png",
+                platforms: ["Android"],
+                androidLink: "https://play.google.com/store/apps/details?id=com.troulungble.luckydraw&hl=zh_HK"
+            },
+            {
+                id: 1,
+                image: "https://rexwllee92710.github.io/app2.png",
+                platforms: ["Android"],
+                androidLink: "https://play.google.com/store/apps/details?id=com.troulungble.youtube_comment_lottery&hl=zh_HK"
+            },
+            {
+                id: 2,
+                image: "https://rexwllee92710.github.io/app3.png",
+                platforms: ["Android"],
+                androidLink: "https://play.google.com/store/apps/details?id=appinventor.ai_troulungble.Tic_Tac_Toe&hl=zh_HK"
+            }
+        ];
+
+        let currentLang = localStorage.getItem('pref-lang') || 'zh';
+
+        function updateContent() {
+            // 更新普通文本
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                el.innerText = translations[currentLang][key];
+            });
+
+            // 更新按鈕文字
+            document.getElementById('lang-text').innerText = currentLang === 'zh' ? 'EN' : '中文';
+            document.documentElement.lang = currentLang === 'zh' ? 'zh-Hant' : 'en';
+
+            // 更新 App 列表
+            renderApps();
+        }
+
+        function renderApps() {
+            const grid = document.getElementById('app-grid');
+            grid.innerHTML = '';
+            
+            appData.forEach((data, index) => {
+                const text = translations[currentLang].apps[index];
+                const platformBadges = data.platforms.map(p => 
+                    `<span class="text-[9px] px-2 py-0.5 rounded bg-gray-900 text-white font-bold mr-1 uppercase tracking-tighter">${p}</span>`
+                ).join('');
+
+                const card = `
+                    <div class="app-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 flex flex-col group transition-all duration-300">
+                        <div class="relative overflow-hidden h-52">
+                            <img src="${data.image}" alt="${text.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 grayscale-[0.2] group-hover:grayscale-0">
+                            <div class="absolute top-4 left-4">${platformBadges}</div>
+                        </div>
+                        <div class="p-8 flex-grow">
+                            <h3 class="text-xl font-black mb-3 text-gray-900 tracking-tight underline decoration-[#00aeef] decoration-4 underline-offset-4">${text.name}</h3>
+                            <p class="text-gray-500 text-sm mb-6 leading-relaxed">${text.description}</p>
+                            <div class="flex flex-wrap gap-2">
+                                ${text.tags.map(tag => `<span class="text-[10px] text-[#00aeef] font-bold uppercase tracking-widest">#${tag}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="p-8 pt-0 mt-auto">
+                            <a href="${data.androidLink}" target="_blank" class="flex-1 flex items-center justify-center gap-2 py-3 border-2 border-gray-900 text-gray-900 rounded hover:bg-gray-900 hover:text-white transition text-xs font-bold uppercase tracking-widest">
+                                <i class="fab fa-google-play"></i> Play Store
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        // 切換事件
+        document.getElementById('lang-switch').addEventListener('click', () => {
+            currentLang = currentLang === 'zh' ? 'en' : 'zh';
+            localStorage.setItem('pref-lang', currentLang);
+            updateContent();
+        });
+
+        // 初始載入
+        window.onload = updateContent;
+    </script>
+</body>
+</html>
