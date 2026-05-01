@@ -54,6 +54,18 @@
         [data-i18n] {
             transition: opacity 0.2s ease;
         }
+		
+		.cornflowerblue{
+			background-color: cornflowerblue!important;
+		}
+		
+		.mediumseagreen{
+			background-color: mediumseagreen!important;
+		}
+		
+		.indianred{
+			background-color: indianred!important;
+		}
     </style>
 </head>
 <body class="resume-pattern text-gray-800">
@@ -148,7 +160,7 @@
                 'nav-portfolio': '作品集',
                 'nav-contact': '聯繫我',
                 'hero-title': '系統分析師 (System Analyst)',
-                'hero-desc': '擁有超過 9 年經驗的資深系統分析師，專精於網上銀行、流動銀行及電子結單系統開發。曾服務於 Fubon Bank 及 HKT (Tap & Go)，擅長將複雜的業務需求轉化為高效的 FinTech 技術方案。',
+                'hero-desc': '在 IT 領域深耕超過 9 年，現職為系統分析師。過往於 Fubon Bank 及 HKT (Tap & Go) 累積了寶貴的實踐經驗，專注於網上銀行與金融支付技術的開發維護。我熱衷於解決技術難題，並致力於在業務需求與技術實現之間搭建溝通的橋樑。',
                 'btn-view': '查看作品集',
                 'btn-contact': '聯絡我',
                 'section-apps': '精選 App 作品',
@@ -170,6 +182,11 @@
                         name: "Tic Tac Toe - 井字過三關 - 智鬥AI",
                         description: "這是一款專為行動裝置優化的現代化井字過三關遊戲。除了保留最純粹的經典對戰，更加入創新、高強度的「流動模式（Infinite Mode）」與智能 AI，讓簡單的遊戲也充滿策略深度。",
                         tags: ["遊戲", "Android"]
+                    },
+					{
+                        name: "後台管理系統",
+                        description: "為企業內部設計的數據管理平台，提供即時數據監控、內容管理 (CMS) 及權限控管功能，著重於系統穩定性與操作流程優化。<br><br>User name: u01 , PWD:Abcd1234<br>User name: m01 , PWD:Abcd1234",
+                        tags: ["企業系統", "數據管理", "Web","Springboot","freemarker","MySQL"]
                     }
                 ]
             },
@@ -178,7 +195,7 @@
                 'nav-portfolio': 'PORTFOLIO',
                 'nav-contact': 'CONTACT',
                 'hero-title': 'System Analyst',
-                'hero-desc': 'Seasoned System Analyst with over 9 years of experience specializing in Internet Banking, Mobile Banking, and E-Statement systems. Proven track record at Fubon Bank and HKT (Tap & Go) in translating complex business needs into high-performance FinTech solutions.',
+                'hero-desc': 'A dedicated System Analyst with over 9 years of hands-on experience in the IT industry. Having worked at Fubon Bank and HKT (Tap & Go), I have gained valuable practical knowledge in Internet Banking and payment gateway systems. I enjoy tackling technical challenges and am committed to bridging the gap between business requirements and technical implementation.',
                 'btn-view': 'View Portfolio',
                 'btn-contact': 'Contact Me',
                 'section-apps': 'Featured Apps',
@@ -200,6 +217,11 @@
                         name: "Tic Tac Toe-Battle with AI",
                         description: "This is a modern, high-performance Tic Tac Toe game designed specifically for mobile devices. Beyond the pure 'Classic' experience, it features an innovative, high-intensity 'Infinite Mode' and a strategic AI that turns a simple game into a deep battle of wits.",
                         tags: ["Game", "Android"]
+                    },
+					 {
+                        name: "Back Office Admin System",
+                        description: "Internal data management platform featuring real-time monitoring, CMS, and RBAC (Role-Based Access Control). Focused on stability and workflow optimization.<br><br>User name: u01 , PWD:Abcd1234<br>User name: m01 , PWD:Abcd1234",
+                        tags: ["Enterprise", "Data Mgmt","Springboot","freemarker","MySQL"]
                     }
                 ]
             }
@@ -223,6 +245,12 @@
                 image: "https://rexwllee92710.github.io/app3.png",
                 platforms: ["Android"],
                 androidLink: "https://play.google.com/store/apps/details?id=appinventor.ai_troulungble.Tic_Tac_Toe&hl=zh_HK"
+            },
+			{
+                id: 3,
+                image: "https://rexwllee92710.github.io/app4.png",
+                platforms: ["Web"],
+                androidLink: "http://ec2-18-222-188-110.us-east-2.compute.amazonaws.com:8080/springTest/login#!/"
             }
         ];
 
@@ -249,11 +277,23 @@
             
             appData.forEach((data, index) => {
                 const text = translations[currentLang].apps[index];
-                const platformBadges = data.platforms.map(p => 
-                    `<span class="text-[9px] px-2 py-0.5 rounded bg-gray-900 text-white font-bold mr-1 uppercase tracking-tighter">${p}</span>`
-                ).join('');
-
-                const card = `
+				var platformBadges = "" ;
+				
+				if (data.platforms=="Android"){
+					platformBadges = data.platforms.map(p => 
+						`<span class="mediumseagreen text-[9px] px-2 py-0.5 rounded bg-gray-900 text-white font-bold mr-1 uppercase tracking-tighter">${p}</span>`
+					).join('');
+				}else if (data.platforms=="IOS"){
+					platformBadges = data.platforms.map(p => 
+						`<span class="indianred text-[9px] px-2 py-0.5 rounded bg-gray-900 text-white font-bold mr-1 uppercase tracking-tighter">${p}</span>`
+					).join('');
+				}else if (data.platforms=="Web"){
+					platformBadges = data.platforms.map(p => 
+						`<span class="cornflowerblue text-[9px] px-2 py-0.5 rounded bg-gray-900 text-white font-bold mr-1 uppercase tracking-tighter">${p}</span>`
+					).join('');
+				}
+				
+                var card = `
                     <div class="app-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 flex flex-col group transition-all duration-300">
                         <div class="relative overflow-hidden h-52">
                             <img src="${data.image}" alt="${text.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 grayscale-[0.2] group-hover:grayscale-0">
@@ -266,13 +306,31 @@
                                 ${text.tags.map(tag => `<span class="text-[10px] text-[#00aeef] font-bold uppercase tracking-widest">#${tag}</span>`).join('')}
                             </div>
                         </div>
-                        <div class="p-8 pt-0 mt-auto">
+                `;
+				
+				if (data.platforms=="Android"){
+					card += `<div class="p-8 pt-0 mt-auto">
                             <a href="${data.androidLink}" target="_blank" class="flex-1 flex items-center justify-center gap-2 py-3 border-2 border-gray-900 text-gray-900 rounded hover:bg-gray-900 hover:text-white transition text-xs font-bold uppercase tracking-widest">
-                                <i class="fab fa-google-play"></i> Play Store
+                                <i class="fab fa-google-play"></i>Google Play
                             </a>
                         </div>
-                    </div>
-                `;
+                    </div>`;
+				}else if (data.platforms=="IOS"){
+					card += `<div class="p-8 pt-0 mt-auto">
+                            <a href="${data.androidLink}" target="_blank" class="flex-1 flex items-center justify-center gap-2 py-3 border-2 border-gray-900 text-gray-900 rounded hover:bg-gray-900 hover:text-white transition text-xs font-bold uppercase tracking-widest">
+                                <i class="fab fa-google-play"></i>Apple Stroe
+                            </a>
+                        </div>
+                    </div>`;
+				}else if (data.platforms=="Web"){
+					card += `<div class="p-8 pt-0 mt-auto">
+                            <a href="${data.androidLink}" target="_blank" class="flex-1 flex items-center justify-center gap-2 py-3 border-2 border-gray-900 text-gray-900 rounded hover:bg-gray-900 hover:text-white transition text-xs font-bold uppercase tracking-widest">
+                                <i class="fab fa-google-play"></i>Link
+                            </a>
+                        </div>
+                    </div>`;
+				}
+				
                 grid.innerHTML += card;
             });
         }
