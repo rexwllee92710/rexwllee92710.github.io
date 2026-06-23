@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght=300;400;500;700&family=Inter:wght=400;600;800&display=swap');
         
         :root {
             --resume-blue: #00aeef;
@@ -79,6 +79,7 @@
             <div class="flex items-center gap-6">
                 <div class="space-x-8 hidden md:flex items-center mr-4">
                     <a href="#home" class="text-sm font-bold hover:text-[#00aeef] transition" data-i18n="nav-about">關於</a>
+                    <a href="#certs" class="text-sm font-bold hover:text-[#00aeef] transition" data-i18n="nav-certs">專業認證</a>
                     <a href="#apps" class="text-sm font-bold hover:text-[#00aeef] transition" data-i18n="nav-portfolio">作品集</a>
                     <a href="#contact" class="text-sm font-bold text-[#00aeef] hover:underline transition" data-i18n="nav-contact">聯繫</a>
                 </div>
@@ -92,7 +93,7 @@
     </nav>
 
     <!-- 英雄區 (Hero Section) -->
-    <section id="home" class="relative pt-48 pb-32 px-6 overflow-hidden">
+    <section id="home" class="relative pt-48 pb-20 px-6 overflow-hidden">
         <div class="hero-bg"></div>
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -114,6 +115,72 @@
                     <div class="absolute inset-4 border-4 border-gray-200 rounded-full"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
                         <i class="fas fa-briefcase text-6xl text-[#00aeef]"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專業認證區 (Certifications Section) -->
+    <section id="certs" class="py-20 bg-slate-50/70 border-y border-slate-200/60 px-6 relative overflow-hidden">
+        <!-- 背景微光裝飾 -->
+        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-72 h-72 bg-cyan-100/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-72 h-72 bg-emerald-100/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="mb-12 text-left">
+                <h2 class="section-title text-2xl font-bold uppercase tracking-widest" data-i18n="section-certs">Professional Credentials</h2>
+                <p class="text-slate-400 text-sm mt-2 font-medium tracking-wide" data-i18n="certs-subtitle">Industry-recognized project and agile management credentials</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- PMP Cert Card -->
+                <div class="relative bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-cyan-100/50 hover:border-cyan-200 transition-all duration-500 group flex flex-col sm:flex-row items-center sm:items-start gap-6 overflow-hidden">
+                    <!-- Top accent line -->
+                    <div class="absolute top-0 left-0 w-full h-1 bg-[#00aeef] opacity-80"></div>
+                    
+                    <!-- Icon Container (底座) -->
+                    <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-slate-50 flex items-center justify-center border border-slate-100 p-2 shadow-inner group-hover:bg-white group-hover:border-cyan-100 transition-all duration-500 flex-shrink-0 relative overflow-hidden">
+                        <!-- 微光流體特效 -->
+                        <div class="absolute -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white/60 opacity-40 group-hover:animate-shine"></div>
+                        <img src="https://rexwllee92710.github.io/pmp_icon.png" alt="PMP_ICON" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"/>
+                    </div>
+                    
+                    <!-- Label and Title -->
+                    <div class="flex-grow text-center sm:text-left self-center">
+                        <span class="text-[10px] font-extrabold text-slate-400 tracking-widest uppercase block mb-1" data-i18n="pmp-org">Project Management Institute (PMI)</span>
+                        <h3 class="text-lg md:text-xl font-black text-slate-800 group-hover:text-[#00aeef] transition-colors duration-300 leading-snug" data-i18n="pmp-title">Project Management Professional (PMP)®</h3>
+                        
+                        <!-- 憑證狀態標籤 -->
+                        <div class="mt-3 flex items-center justify-center sm:justify-start gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span class="text-[11px] text-slate-500 font-bold uppercase tracking-wider" data-i18n="cert-verified">Verified Credential</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PSM I Cert Card -->
+                <div class="relative bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-emerald-100/50 hover:border-emerald-200 transition-all duration-500 group flex flex-col sm:flex-row items-center sm:items-start gap-6 overflow-hidden">
+                    <!-- Top accent line -->
+                    <div class="absolute top-0 left-0 w-full h-1 bg-emerald-500 opacity-80"></div>
+                    
+                    <!-- Icon Container (底座) -->
+                    <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-slate-50 flex items-center justify-center border border-slate-100 p-2 shadow-inner group-hover:bg-white group-hover:border-emerald-100 transition-all duration-500 flex-shrink-0 relative overflow-hidden">
+                        <!-- 微光流體特效 -->
+                        <div class="absolute -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white/60 opacity-40 group-hover:animate-shine"></div>
+                        <img src="https://rexwllee92710.github.io/psm_icon.png" alt="PSM_ICON" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"/>
+                    </div>
+                    
+                    <!-- Label and Title -->
+                    <div class="flex-grow text-center sm:text-left self-center">
+                        <span class="text-[10px] font-extrabold text-slate-400 tracking-widest uppercase block mb-1" data-i18n="psm-org">Scrum.org</span>
+                        <h3 class="text-lg md:text-xl font-black text-slate-800 group-hover:text-emerald-600 transition-colors duration-300 leading-snug" data-i18n="psm-title">Professional Scrum Master™ I (PSM I)</h3>
+                        
+                        <!-- 憑證狀態標籤 -->
+                        <div class="mt-3 flex items-center justify-center sm:justify-start gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span class="text-[11px] text-slate-500 font-bold uppercase tracking-wider" data-i18n="cert-verified">Verified Credential</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -157,12 +224,20 @@
         const translations = {
             'zh': {
                 'nav-about': '關於',
+                'nav-certs': '專業認證',
                 'nav-portfolio': '作品集',
                 'nav-contact': '聯繫我',
                 'hero-title': '系統分析師 (System Analyst)',
                 'hero-desc': '在 IT 領域深耕超過 9 年，現職為系統分析師。過往於 Fubon Bank 及 HKT (Tap & Go) 累積了寶貴的實踐經驗，專注於網上銀行與金融支付技術的開發維護。我熱衷於解決技術難題，並致力於在業務需求與技術實現之間搭建溝通的橋樑。',
                 'btn-view': '查看作品集',
                 'btn-contact': '聯絡我',
+                'section-certs': '專業認證',
+                'certs-subtitle': '國際標準專案及敏捷管理雙認證',
+                'pmp-org': 'Project Management Institute (PMI)',
+                'pmp-title': 'Project Management Professional (PMP)®',
+                'psm-org': 'Scrum.org',
+                'psm-title': 'Professional Scrum Master™ I (PSM I)',
+                'cert-verified': '已驗證憑證',
                 'section-apps': '精選 App 作品',
                 'section-contact': '聯絡方式',
                 'contact-email': '電子郵件',
@@ -192,12 +267,20 @@
             },
             'en': {
                 'nav-about': 'ABOUT',
+                'nav-certs': 'CERTIFICATIONS',
                 'nav-portfolio': 'PORTFOLIO',
                 'nav-contact': 'CONTACT',
                 'hero-title': 'System Analyst',
                 'hero-desc': 'A dedicated System Analyst with over 9 years of hands-on experience in the IT industry. Having worked at Fubon Bank and HKT (Tap & Go), I have gained valuable practical knowledge in Internet Banking and payment gateway systems. I enjoy tackling technical challenges and am committed to bridging the gap between business requirements and technical implementation.',
                 'btn-view': 'View Portfolio',
                 'btn-contact': 'Contact Me',
+                'section-certs': 'Professional Certifications',
+                'certs-subtitle': 'Industry-recognized project and agile management credentials',
+                'pmp-org': 'Project Management Institute (PMI)',
+                'pmp-title': 'Project Management Professional (PMP)®',
+                'psm-org': 'Scrum.org',
+                'psm-title': 'Professional Scrum Master™ I (PSM I)',
+                'cert-verified': 'Verified Credential',
                 'section-apps': 'Featured Apps',
                 'section-contact': 'Get In Touch',
                 'contact-email': 'Email',
@@ -260,7 +343,9 @@
             // 更新普通文本
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                el.innerText = translations[currentLang][key];
+                if (translations[currentLang][key]) {
+                    el.innerText = translations[currentLang][key];
+                }
             });
 
             // 更新按鈕文字
@@ -345,5 +430,17 @@
         // 初始載入
         window.onload = updateContent;
     </script>
+    
+    <!-- 微光動畫自定義 CSS 動效 -->
+    <style>
+        @keyframes shine {
+            100% {
+                left: 125%;
+            }
+        }
+        .animate-shine {
+            animation: shine 0.85s ease-out;
+        }
+    </style>
 </body>
 </html>
